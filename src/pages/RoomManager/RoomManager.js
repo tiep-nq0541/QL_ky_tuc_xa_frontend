@@ -2,14 +2,8 @@ import { useEffect, useState } from 'react';
 import Button from '~/components/Button';
 import * as roomManagerService from '~/services/roomManagerService';
 
-import classNames from 'classnames/bind';
-
-import styles from './RoomManager.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import config from '~/config';
-
-const cx = classNames.bind(styles);
+import Success from '~/components/Success/Success';
 
 function RoomManager() {
     const [rooms, setRooms] = useState([]);
@@ -39,12 +33,7 @@ function RoomManager() {
 
     return (
         <div>
-            {!!message && (
-                <div className={cx('message')}>
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                    <p>{message}</p>
-                </div>
-            )}
+            {!!message && <Success message={message} />}
             <Button to={config.routes.createRoom}>Them</Button>
             {rooms.map((room) => (
                 <li key={room.id}>
