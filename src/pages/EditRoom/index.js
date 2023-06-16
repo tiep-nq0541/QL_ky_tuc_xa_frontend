@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 import Button from '~/components/Button/Button';
+import Success from '~/components/Success/Success';
 
 import * as roomManagerService from '~/services/roomManagerService';
 
@@ -55,10 +56,13 @@ function EditRoom() {
 
     const onclick = () => {
         setShowMessage(true);
+        setTimeout(() => {
+            setShowMessage(false);
+        }, 3000);
     };
     return (
         <div>
-            {showMessage && <p>Hello</p>}
+            {showMessage && <Success message="Lưu thông tin thành công" />}
             <form onSubmit={handleFormSubmit}>
                 <input type="text" value={tenPhong} onChange={handleTenPhongChange} />
                 <input type="text" value={toaNha} onChange={handleToaNhaChange} />

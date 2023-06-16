@@ -6,8 +6,10 @@ const routes = {
     search: '/search',
     live: '/live',
     roomManager: '/admin/quan-ly-phong',
-    edit: '/admin/quan-ly-phong/:id/edit',
+    editRoom: '/admin/quan-ly-phong/:id/edit',
     createRoom: '/admin/quan-ly-phong/create',
+    studentManager: '/admin/quan-ly-sinh-vien',
+    editStudent: '/admin/quan-ly-sinh-vien/:id/edit',
 };
 
 export default routes;
