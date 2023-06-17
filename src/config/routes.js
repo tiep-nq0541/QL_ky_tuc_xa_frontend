@@ -10,6 +10,7 @@ const routes = {
     createRoom: '/admin/quan-ly-phong/create',
     studentManager: '/admin/quan-ly-sinh-vien',
     editStudent: '/admin/quan-ly-sinh-vien/:id/edit',
+    infoRoom: '/admin/quan-ly-phong/:id',
 };
 
 export default routes;
