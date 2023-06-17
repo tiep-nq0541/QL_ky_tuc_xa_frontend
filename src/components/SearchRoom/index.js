@@ -7,11 +7,12 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import * as searchServices from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
-import styles from './Search.module.scss';
+import styles from '~/layouts/components/Search/Search.module.scss';
+import Button from '../Button/Button';
 
 const cx = classNames.bind(styles);
 
-function Search() {
+function SearchRoom({ onRoomClick }) {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(false);
@@ -20,6 +21,7 @@ function Search() {
     const debouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
+
     useEffect(() => {
         if (!debouncedValue.trim()) {
             setSearchResult([]);
@@ -56,6 +58,10 @@ function Search() {
         }
     };
 
+    const handleRoomClick = (id, tenPhong, toaNha, soLuong) => {
+        onRoomClick(id, tenPhong, toaNha, soLuong);
+    };
+
     return (
         <div>
             <HeadlessTippy
@@ -67,11 +73,16 @@ function Search() {
                             <h4 className={cx('search-title')}>Phòng</h4>
 
                             {searchResult.map((result) => (
-                                <div key={result.id}>
+                                <Button
+                                    key={result.id}
+                                    onClick={() =>
+                                        handleRoomClick(result.id, result.tenPhong, result.toaNha, result.soLuong)
+                                    }
+                                >
                                     <div>{result.id}</div>
                                     <div>{result.tenPhong}</div>
                                     <div>{result.toaNha}</div>
-                                </div>
+                                </Button>
                             ))}
                         </PopperWrapper>
                     </div>
@@ -103,4 +114,4 @@ function Search() {
     );
 }
 
-export default Search;
+export default SearchRoom;
