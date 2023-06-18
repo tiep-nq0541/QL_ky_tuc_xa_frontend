@@ -1,10 +1,11 @@
+// giao diện trang tài khoản 
 .wrapper {
     display: flex;
     align-items: center;
-    padding: 7px 16px;
+    padding: 8px 16px;
 
     &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
+        background-color: rgba(33, 35, 46, 0.03);
     }
 }
 .avartar {
@@ -24,9 +25,9 @@
 .check {
     margin-left: 6px;
     font-size: 1.2rem;
-    color: rgb(32, 213, 236);
+    color: rgb(39, 217, 240);
 }
 .username {
     font-size: 1.4rem;
-    color: rgba(22, 24, 35, 0.5);
+    color: rgba(24, 26, 38, 0.5);
 }

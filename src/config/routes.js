@@ -1,3 +1,4 @@
+// obj routes đến các đường dẫn 
 const routes = {
     home: '/',
     following: '/following',

@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Quản lý ký túc xá",
+  "name": "Quản lý ký túc xá Đại học Bách Khoa Hà Nội",
+  
+  // chinh sua kich thuoc hinh anh
   "icons": [
     {
       "src": "favicon.ico",

@@ -6,11 +6,13 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Image from '../Image';
 import { Link } from 'react-router-dom';
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(styles); // Tạo một hàm bind classNames với file CSS module
 
 function AccountItem({ data }) {
     return (
+        // tạo đường dẫn đến data.nickname
         <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+            {/* hiển thị hình ảnh */}
             <Image className={cx('avartar')} src={data.avatar} alt={data.full_name} />
             <div className={cx('info')}>
                 <p className={cx('name')}>
@@ -22,7 +24,7 @@ function AccountItem({ data }) {
         </Link>
     );
 }
-
+// kiểu trả về của data là obj
 AccountItem.propTypes = {
     data: PropTypes.object.isRequired,
 };
